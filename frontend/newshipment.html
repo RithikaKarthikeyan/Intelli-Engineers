@@ -1,0 +1,284 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>New Shipment</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* Page layout */
+
+body {
+font-family: Arial;
+background: #0f172a;
+margin: 0;
+}
+
+.form-container {
+
+width: 600px;
+margin: 40px auto;
+
+background: #1e293b;
+
+padding: 30px;
+
+border-radius: 12px;
+
+box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+color: white;
+
+}
+
+.form-title {
+
+font-size: 24px;
+
+margin-bottom: 20px;
+
+}
+
+label {
+
+display: block;
+
+margin-top: 15px;
+
+font-weight: bold;
+
+}
+
+input, select {
+
+width: 100%;
+
+padding: 10px;
+
+margin-top: 6px;
+
+border-radius: 6px;
+
+border: none;
+
+font-size: 14px;
+
+}
+
+.submit-btn {
+
+margin-top: 25px;
+
+width: 100%;
+
+padding: 12px;
+
+background: linear-gradient(
+to right,
+#22c55e,
+#16a34a
+);
+
+border: none;
+
+color: white;
+
+font-size: 16px;
+
+border-radius: 8px;
+
+cursor: pointer;
+
+}
+
+.submit-btn:hover {
+
+opacity: 0.9;
+
+}
+
+.back-btn {
+
+margin-bottom: 20px;
+
+background: #334155;
+
+color: white;
+
+padding: 8px 15px;
+
+border: none;
+
+border-radius: 6px;
+
+cursor: pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+<button class="back-btn"
+onclick="goBack()">
+
+← Back to Dashboard
+
+</button>
+
+<h2 class="form-title">
+
+Create New Shipment
+
+</h2>
+
+<!-- Shipment ID -->
+
+<label>Shipment ID</label>
+
+<input type="text"
+placeholder="Enter Shipment ID">
+
+
+<!-- State Dropdown -->
+
+<label>Destination State</label>
+
+<select id="state">
+
+<option>Select State</option>
+
+<option>Tamil Nadu</option>
+<option>Kerala</option>
+<option>Karnataka</option>
+<option>Andhra Pradesh</option>
+<option>Telangana</option>
+<option>Maharashtra</option>
+<option>Gujarat</option>
+<option>Rajasthan</option>
+<option>Punjab</option>
+<option>Haryana</option>
+<option>Uttar Pradesh</option>
+<option>Madhya Pradesh</option>
+<option>West Bengal</option>
+<option>Odisha</option>
+<option>Bihar</option>
+<option>Assam</option>
+<option>Goa</option>
+<option>Jharkhand</option>
+<option>Chhattisgarh</option>
+<option>Himachal Pradesh</option>
+<option>Uttarakhand</option>
+
+</select>
+
+
+
+<!-- Product Type -->
+
+<label>Product Type</label>
+
+<select id="productType"
+onchange="checkOtherProduct()">
+
+<option>Select Product</option>
+
+<option>Electronics</option>
+<option>Clothing</option>
+<option>Furniture</option>
+<option>Food Items</option>
+<option>Medicines</option>
+<option>Books</option>
+
+<option value="Others">
+
+Others
+
+</option>
+
+</select>
+
+
+
+<!-- Others Input -->
+
+<div id="otherProductDiv"
+style="display:none;">
+
+<label>Enter Product Name</label>
+
+<input type="text"
+placeholder="Type new product">
+
+</div>
+
+
+
+<!-- Weight -->
+
+<label>Weight (kg)</label>
+
+<input type="number"
+placeholder="Enter weight">
+
+
+
+<!-- Submit -->
+
+<button class="submit-btn">
+
+Create Shipment
+
+</button>
+
+</div>
+
+
+
+<script>
+
+function goBack() {
+
+window.location.href = "mainpage.html";
+
+}
+
+function checkOtherProduct() {
+
+let product =
+document.getElementById("productType").value;
+
+if(product === "Others") {
+
+document.getElementById(
+"otherProductDiv"
+).style.display = "block";
+
+}
+else {
+
+document.getElementById(
+"otherProductDiv"
+).style.display = "none";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

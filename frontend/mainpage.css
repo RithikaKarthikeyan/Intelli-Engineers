@@ -1,0 +1,324 @@
+:root {
+  /* Rich Classic Palette */
+  --bg-gradient: radial-gradient(circle at top left, #1a1c2c 0%, #4a192c 100%);
+  --sidebar-color: #ffffff;
+  --accent-gold: #d4af37;
+  --vibrant-blue: #3a86ff;
+  --vibrant-purple: #8338ec;
+  --vibrant-pink: #ff006e;
+  --vibrant-orange: #fb5607;
+  --text-dark: #2d3436;
+  --glass: rgba(255, 255, 255, 0.95);
+  --card-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif; /* Classic serif touch for headings */
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* Container Adjustments */
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 15px;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* --- Sidebar: The Elegant Panel --- */
+.sidebar {
+  width: 280px;
+  background: var(--sidebar-color);
+  padding: 30px 20px;
+  border-radius: 24px;
+  box-shadow: 10px 0 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-btn {
+  width: 100%;
+  padding: 15px;
+  margin: 8px 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #636e72;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu-btn:hover {
+  background: #f8f9fa;
+  color: var(--vibrant-blue);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.menu-btn.active {
+  background: linear-gradient(45deg, var(--vibrant-blue), var(--vibrant-purple));
+  color: white;
+  box-shadow: 0 10px 20px rgba(131, 56, 236, 0.3);
+}
+
+.new-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #fb5607, #ff006e);
+  color: rgb(110, 178, 235);
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(251, 86, 7, 0.4);
+}
+
+/* --- Main Content --- */
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* --- Navbar & Profile --- */
+.navbar {
+  background: var(--glass);
+  padding: 15px 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 30px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 18px; /* Classic "Squircle" */
+  border: 3px solid white;
+  outline: 3px solid var(--vibrant-purple);
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s ease;
+}
+
+.avatar:hover {
+  transform: rotate(-10deg) scale(1.1);
+  outline-color: var(--vibrant-pink);
+}
+
+/* --- Colourful Cards --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 24px;
+  border-bottom: 6px solid var(--vibrant-blue);
+  transition: all 0.3s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.card:nth-child(2) { border-bottom-color: var(--vibrant-purple); }
+.card:nth-child(3) { border-bottom-color: var(--vibrant-pink); }
+.card:nth-child(4) { border-bottom-color: var(--vibrant-orange); }
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* --- Flow & Alerts --- */
+.middle, .bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.flow, .shipment {
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+}
+
+.step.active {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 800;
+  box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.alert {
+  border-radius: 15px;
+  padding: 15px;
+  font-weight: 600;
+  border: 1px solid rgba(98, 111, 184, 0.05);
+  box-shadow: 0 4px 6px rgba(242, 187, 242, 0.02);
+}
+
+.alert.red {
+  background: #fff0f3;
+  color: #ff006e;
+  border-left: 10px solid #ff006e;
+}
+
+/* --- The "Smart" Section: High Gloss --- */
+.smart {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress {
+  height: 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.bar {
+  background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff);
+  background-size: 200% 100%;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.camera img {
+  border: 4px solid rgba(255,255,255,0.1);
+  filter: sepia(20%) contrast(1.1);
+}
+
+.camera-text {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+/* Common base for the 3 new buttons */
+.nav-link-custom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 14px 18px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link-custom:active {
+  transform: scale(0.95);
+}
+
+/* 1. Dashboard: Sapphire Depth */
+.btn-dashboard {
+  background: linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+  box-shadow: 0 6px 15px rgba(67, 100, 247, 0.3);
+  border-left: 5px solid #002e7a;
+}
+
+.btn-dashboard:hover {
+  box-shadow: 0 10px 20px rgba(67, 100, 247, 0.5);
+  filter: brightness(1.1);
+}
+
+/* 2. Transport: Emerald Motion */
+.btn-transport {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  box-shadow: 0 6px 15px rgba(17, 153, 142, 0.3);
+  border-left: 5px solid #0a5a53;
+}
+
+.btn-transport:hover {
+  box-shadow: 0 10px 20px rgba(17, 153, 142, 0.5);
+  transform: translateX(5px); /* Classic movement feel */
+}
+
+/* 3. Support: Amethyst Care */
+.btn-support {
+  background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%);
+  box-shadow: 0 6px 15px rgba(142, 45, 226, 0.3);
+  border-left: 5px solid #2d008a;
+}
+
+.btn-support:hover {
+  box-shadow: 0 10px 20px rgba(142, 45, 226, 0.5);
+  animation: pulse-classic 1.5s infinite;
+}
+
+/* Soft pulse for the support button */
+@keyframes pulse-classic {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Adding a "Glint" effect to all buttons */
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.nav-link-custom:hover::after {
+  left: 120%;
+}
+.button-row{
+  display:flex;
+  gap: 20px;
+  width:100%;
+}
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.button-row .nav-link-custom{
+  width:calc(50% - 10px); /* Two buttons with a gap of 20px */
+  margin:0;
+}

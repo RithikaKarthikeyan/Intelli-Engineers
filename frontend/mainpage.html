@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LogisticsFlow Dashboard</title>
+
+<link rel="stylesheet" href="mainpage.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2 class="logo">LogisticsFlow</h2>
+
+<div class="terminal">
+<h4>Global Ops</h4>
+<p>Terminal A-12</p>
+</div>
+
+<div class="menu">
+
+<button class="menu-btn active"
+onclick="navigate('overview')">
+<i class="fa fa-th-large"></i>
+Overview
+</button>
+
+<button class="menu-btn"
+onclick="navigate('livemap')">
+<i class="fa fa-map"></i>
+Live Map
+</button>
+
+<button class="menu-btn"
+onclick="navigate('inventory')">
+<i class="fa fa-box"></i>
+Inventory
+</button>
+
+<button class="menu-btn"
+onclick="navigate('fleet')">
+<i class="fa fa-truck"></i>
+Fleet
+</button>
+
+<button class="menu-btn"
+onclick="navigate('reports')">
+<i class="fa fa-chart-bar"></i>
+Reports
+</button>
+
+<button class="menu-btn"
+onclick="navigate('security')">
+<i class="fa fa-shield"></i>
+Security
+</button>
+
+</div>
+
+<button class="new-btn"
+onclick="navigate('newshipment')">
+
++ New Shipment
+
+</button>
+
+
+<div class="bottom-links">
+
+<button class="link-btn"
+onclick="navigate('help')">
+Help Center
+</button>
+
+<button class="link-btn"
+onclick="navigate('contact')">
+Contact Admin
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- Main Area -->
+
+<div class="main">
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+
+<div class="sidebar">
+<div class = "button-row"> 
+  <button class="nav-link-custom btn-dashboard">
+    <span style="margin-right: 10px;">📊</span> Dashboard
+  </button>
+ 
+  <button class="nav-link-custom btn-transport">
+    <span style="margin-right: 20px;">🚚</span> Transport
+  </button>
+  
+  <button class="nav-link-custom btn-support">
+    <span style="margin-right: 30px;">🛡️</span> Support
+  </button>
+</div>
+  </div>
+
+
+
+<div class="nav-right">
+
+
+
+
+<div class="nav-right">
+  <div class="icon-wrapper">
+    
+  </div>
+
+  <div class="profile-container">
+    <img 
+      id="avatarImg" 
+      src="https://cdn-icons-png.flaticon.com/512/149/149071.png" 
+      class="avatar" 
+      onclick="triggerImageUpload()"
+      oncontextmenu="return false;"
+      draggable="false"
+    >
+    <div class="profile-actions">
+      <span class="remove-link" onclick="removeProfile()">Remove Photo</span>
+      
+    </div>
+  </div>
+
+  <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+</div>
+<input 
+  type="file" 
+  id="imageInput" 
+  accept="image/*" 
+  style="display: none;" 
+  onchange="previewImage(event)"
+>
+
+<button class="signout"
+onclick="window.location.href='index.html'">
+Sign Out
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- Stats Cards -->
+
+<div class="cards">
+
+<div class="card">
+<p>TOTAL ORDERS</p>
+<h2>1,284</h2>
+<span class="green">+12%</span>
+</div>
+
+<div class="card">
+<p>ACTIVE SHIPMENTS</p>
+<h2>412</h2>
+<span>Steady</span>
+</div>
+
+<div class="card">
+<p>DELAYED</p>
+<h2 class="red">18</h2>
+<span class="red">Critical</span>
+</div>
+
+<div class="card">
+<p>INVENTORY STATUS</p>
+<h2>94%</h2>
+<span class="green">Optimal</span>
+</div>
+
+</div>
+
+
+
+<!-- Middle -->
+
+<div class="middle">
+
+<!-- Flow -->
+
+<div class="flow">
+
+<div class="flow-header">
+
+<button class="flow-title"
+onclick="navigate('flow')">
+
+Supply Chain Network Flow
+
+</button>
+
+<button class="link-btn"
+onclick="navigate('fullsystem')">
+
+Full System View →
+
+</button>
+
+</div>
+
+
+
+<div class="steps">
+
+<div class="step">
+<i class="fa fa-industry"></i>
+<p>Supplier</p>
+<span class="green">READY</span>
+</div>
+
+<div class="arrow">›</div>
+
+<div class="step">
+<i class="fa fa-warehouse"></i>
+<p>Warehouse</p>
+<span class="green">PROCESSING</span>
+</div>
+
+<div class="arrow">›</div>
+
+<div class="step active">
+<i class="fa fa-truck"></i>
+<p>Transport</p>
+<span class="yellow">IN TRANSIT</span>
+</div>
+
+<div class="arrow">›</div>
+
+<div class="step">
+<i class="fa fa-location-dot"></i>
+<p>Customer</p>
+<span>PENDING</span>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Alerts -->
+
+<div class="alerts">
+
+<h3>LIVE ALERTS</h3>
+
+<div class="alert red">
+
+<p><b>Traffic Delay</b></p>
+
+Shipment #TR-402 delayed 4h due to congestion at Pier 11.
+
+</div>
+
+<div class="alert">
+
+<p><b>Temp Variance</b></p>
+
+Container C-12 reporting +2°C fluctuation.
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Bottom -->
+
+<div class="bottom">
+
+<div class="shipment">
+
+<h3>
+Active Shipment: #SF-90210
+<span class="track">
+ON TRACK
+</span>
+</h3>
+
+<p class="route">
+Primary Route:
+Singapore Terminal → Port of Los Angeles
+</p>
+
+<div class="progress">
+
+<div class="bar"></div>
+
+</div>
+
+<div class="ship-info">
+
+<p>Oct 12, 04:00</p>
+
+<p>Pacific Ocean - Area 4</p>
+
+<p class="green">
+Oct 24, 18:30
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="right-panel">
+
+<div class="smart">
+
+<h4>SMART SUGGESTION</h4>
+
+<h3>Optimize Route TR-402</h3>
+
+<p>
+
+Weather patterns suggest switching to
+
+<b>Alternate Route B</b>
+
+through Oakland.
+
+Potential saving:
+
+<span class="green">
+
+6.5 hours
+
+</span>
+
+</p>
+
+<button onclick="applySuggestion()">
+
+Apply Suggestion
+
+</button>
+
+</div>
+
+
+
+<div class="camera">
+
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d">
+
+<div class="camera-text">
+
+FACILITY A-12  
+<br>
+<b>Live Camera Feed</b>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+function navigate(page) {
+    window.location.href = page + ".html";
+}
+function removeProfile() {
+    // 1. Define the default placeholder URL
+    const defaultPlaceholder = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+    
+    const avatar = document.getElementById('avatarImg');
+    const fileInput = document.getElementById('imageInput');
+
+    // 2. Add a fade-out effect for a "nice" feel
+    avatar.style.opacity = "0.5";
+
+    setTimeout(() => {
+        // 3. Update the source
+        avatar.src = defaultPlaceholder;
+        
+        // 4. Reset the input value so user can re-upload the same pic later
+        fileInput.value = "";
+        
+        avatar.style.opacity = "1";
+        console.log("Profile reset to default.");
+    }, 200);
+}
+
+// Ensure your preview function is still working
+function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const output = document.getElementById('avatarImg');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+function triggerImageUpload() {
+    document.getElementById('imageInput').click();
+
+}
+</script>
+
+</body>
+</html>
