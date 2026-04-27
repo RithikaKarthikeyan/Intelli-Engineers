@@ -1,0 +1,239 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Support - LogiTrack</title>
+
+<style>
+
+/* Page Background */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0b1d2a;
+    color: #ffffff;
+}
+
+/* Container */
+
+.main-container {
+    padding: 30px;
+}
+
+/* Header */
+
+.page-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #a0b4c6;
+    margin-bottom: 30px;
+}
+
+/* Layout */
+
+.support-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+/* Form Card */
+
+.support-form {
+    background: #112a3a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.support-form h2 {
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #a0b4c6;
+}
+
+input,
+textarea {
+    background: #0b1d2a;
+    border: 1px solid #1f4d6b;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #00bfff;
+}
+
+/* Button */
+
+.submit-btn {
+    background: #00bfff;
+    color: black;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #009acd;
+}
+
+/* Direct Support */
+
+.direct-support {
+    background: #112a3a;
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.direct-support h2 {
+    margin-bottom: 20px;
+}
+
+/* Support Info */
+
+.support-info {
+    margin-bottom: 20px;
+}
+
+.support-info p {
+    color: #00bfff;
+    margin-bottom: 5px;
+}
+
+.support-info span {
+    color: #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+.support-wrapper {
+    grid-template-columns: 1fr;
+}
+
+.input-row {
+    flex-direction: column;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- Page Heading -->
+    <div class="page-header">
+        <h1>How can we help you today?</h1>
+        <p>
+            Our support team is available to assist with your logistics 
+            and shipment inquiries.
+        </p>
+    </div>
+
+    <!-- Support Section -->
+    <div class="support-wrapper">
+
+        <!-- Contact Form -->
+        <div class="support-form">
+
+            <h2>Contact Support</h2>
+
+            <div class="input-row">
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text"
+                     placeholder="Enter your name">
+                </div>
+
+                <div class="input-group">
+                    <label>Work Email</label>
+                    <input type="email"
+                     placeholder="Enter your email">
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label>Subject</label>
+                <input type="text"
+                 placeholder="e.g. Shipment Delay in Terminal A-12">
+            </div>
+
+            <div class="input-group">
+                <label>Message</label>
+                <textarea rows="5"
+                 placeholder="Describe your issue..."></textarea>
+            </div>
+
+            <button class="submit-btn">
+                Submit Inquiry
+            </button>
+
+        </div>
+
+        <!-- Direct Support Card -->
+        <div class="direct-support">
+
+            <h2>Direct Support</h2>
+
+            <div class="support-info">
+                <p>📧 Email Support</p>
+                <span>support@logitrack.com</span>
+            </div>
+
+            <div class="support-info">
+                <p>📞 Hotline</p>
+                <span>+91 98765 43210</span>
+            </div>
+
+            <div class="support-info">
+                <p>📍 Office</p>
+                <span>Chennai Logistics Hub</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
